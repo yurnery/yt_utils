@@ -1,0 +1,28 @@
+{
+  "name": "yt_utils",
+  "version": "1.0.0",
+  "description": "utils",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "rm -fr ./dist && tsc -p tsconfig.prod.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yurnery/yt_utils.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yurnery/yt_utils/issues"
+  },
+  "homepage": "https://github.com/yurnery/yt_utils#readme",
+  "devDependencies": {
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.3.3"
+  }
+}
