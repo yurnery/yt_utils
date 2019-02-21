@@ -1,12 +1,13 @@
 {
-  "name": "yt_utils",
-  "version": "1.0.0",
+  "name": "yunti_utils",
+  "version": "1.0.1",
   "description": "utils",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "rm -fr ./dist && tsc -p tsconfig.prod.json"
+    "build": "rm -fr ./dist && tsc -p tsconfig.prod.json",
+    "publish": "yarn publish && git push"
   },
   "repository": {
     "type": "git",
