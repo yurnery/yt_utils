@@ -7,7 +7,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "build": "rm -fr ./dist && tsc -p tsconfig.prod.json",
-    "pub": "git push && npm publish  "
+    "pub": "git push && npm publish"
   },
   "repository": {
     "type": "git",
