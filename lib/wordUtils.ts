@@ -52,7 +52,7 @@ class WordRegUtil {
 
   private static sepStr = `[.．]`;
   private static nonEngLetter = `[^\\x00-\\xff…△、’]`;
-  private static splitWordEnd1 = `(?:[\\[/])`;
+  private static splitWordEnd1 = `(?:[\\[/]|\\d+\\s*[^\\x00-\\xff])`;
 
   private static characteristicKeyWord = () =>
     `vi${WordRegUtil.sepStr}|adj${WordRegUtil.sepStr}|n${

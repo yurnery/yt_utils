@@ -22,7 +22,7 @@ var WordRegUtil = /** @class */ (function () {
     };
     WordRegUtil.sepStr = "[.\uFF0E]";
     WordRegUtil.nonEngLetter = "[^\\x00-\\xff\u2026\u25B3\u3001\u2019]";
-    WordRegUtil.splitWordEnd1 = "(?:[\\[/])";
+    WordRegUtil.splitWordEnd1 = "(?:[\\[/]|\\d+\\s*[^\\x00-\\xff])";
     WordRegUtil.characteristicKeyWord = function () {
         return "vi" + WordRegUtil.sepStr + "|adj" + WordRegUtil.sepStr + "|n" + WordRegUtil.sepStr + "|vt" + WordRegUtil.sepStr + "|adv" + WordRegUtil.sepStr + "|prep" + WordRegUtil.sepStr + "|conj" + WordRegUtil.sepStr + "|v" + WordRegUtil.sepStr + "|pron" + WordRegUtil.sepStr + "|interj" + WordRegUtil.sepStr + "|art" + WordRegUtil.sepStr + "|num" + WordRegUtil.sepStr;
     };
