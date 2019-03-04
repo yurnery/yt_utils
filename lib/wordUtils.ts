@@ -2,7 +2,7 @@
  * @Author: weiwenshe
  * @Date: 2019-02-13 13:52:41
  * @Last Modified by: weiwenshe
- * @Last Modified time: 2019-02-21 14:55:24
+ * @Last Modified time: 2019-03-04 11:05:50
  */
 
 export interface CharacteristicType {
@@ -107,9 +107,10 @@ export class WordUtils {
       .filter(line => line.trim().length > 0);
     const words = [];
     for (const wordStr of allWords) {
-      const result = wordStr.trim().match(WordReg.splitReg);
+      const rmIndexStr = wordStr.replace(WordReg.replaceNumReg, "").trim();
+      const result = rmIndexStr.match(WordReg.splitReg);
       if (result) {
-        const word = result[1].replace(WordReg.replaceNumReg, "").trim();
+        const word = result[1].trim();
         const explain = result[2].replace(WordReg.soundmarkReg, "").trim();
         const characteristic = WordUtils.splitCharacteristic(explain);
         if (word.length > 0) {

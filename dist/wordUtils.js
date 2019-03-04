@@ -3,7 +3,7 @@
  * @Author: weiwenshe
  * @Date: 2019-02-13 13:52:41
  * @Last Modified by: weiwenshe
- * @Last Modified time: 2019-02-21 14:55:24
+ * @Last Modified time: 2019-03-04 11:05:50
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 // 生成正则规则工具
@@ -71,9 +71,10 @@ var WordUtils = /** @class */ (function () {
         var words = [];
         for (var _i = 0, allWords_1 = allWords; _i < allWords_1.length; _i++) {
             var wordStr = allWords_1[_i];
-            var result = wordStr.trim().match(WordReg.splitReg);
+            var rmIndexStr = wordStr.replace(WordReg.replaceNumReg, "").trim();
+            var result = rmIndexStr.match(WordReg.splitReg);
             if (result) {
-                var word = result[1].replace(WordReg.replaceNumReg, "").trim();
+                var word = result[1].trim();
                 var explain = result[2].replace(WordReg.soundmarkReg, "").trim();
                 var characteristic = WordUtils.splitCharacteristic(explain);
                 if (word.length > 0) {
