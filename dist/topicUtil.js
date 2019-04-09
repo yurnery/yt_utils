@@ -213,7 +213,7 @@ var TopicUtil = /** @class */ (function () {
             var value = newTopic.score.value
                 .trim()
                 .replace(TopicUtilReg.scoreWithUnit, function (match) { return match.replace("分", ""); });
-            value = Number(value) + "";
+            value = value ? Number(value) + "" : "";
             newTopic.score.value = value;
         }
         if (newTopic.analysis) {
