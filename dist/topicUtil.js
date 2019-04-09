@@ -3,7 +3,7 @@
  * @Author: weiwenshe
  * @Date: 2019-01-03 14:41:42
  * @Last Modified by: weiwenshe
- * @Last Modified time: 2019-02-21 12:58:47
+ * @Last Modified time: 2019-04-09 13:54:02
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
@@ -333,10 +333,14 @@ var TopicUtil = /** @class */ (function () {
     };
     TopicUtil.checkScore = function (topic) {
         if (!topic.score) {
-            return tslib_1.__assign({}, topic, { error: {
-                    errorCode: TopicErrorCode.noScore,
-                    message: ErrorMessage.noScore
-                } });
+            return topic;
+            // return {
+            //   ...topic,
+            //   error: {
+            //     errorCode: TopicErrorCode.noScore,
+            //     message: ErrorMessage.noScore
+            //   }
+            // };
         }
         else if (!TopicUtilReg.scoreNumReg.test(topic.score.value)) {
             return tslib_1.__assign({}, topic, { error: {

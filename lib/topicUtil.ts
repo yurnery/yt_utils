@@ -2,7 +2,7 @@
  * @Author: weiwenshe
  * @Date: 2019-01-03 14:41:42
  * @Last Modified by: weiwenshe
- * @Last Modified time: 2019-02-21 12:58:47
+ * @Last Modified time: 2019-04-09 13:54:02
  */
 
 export enum TopicType {
@@ -455,13 +455,14 @@ export class TopicUtil {
 
   private static checkScore(topic: Topic) {
     if (!topic.score) {
-      return {
-        ...topic,
-        error: {
-          errorCode: TopicErrorCode.noScore,
-          message: ErrorMessage.noScore
-        }
-      };
+      return topic;
+      // return {
+      //   ...topic,
+      //   error: {
+      //     errorCode: TopicErrorCode.noScore,
+      //     message: ErrorMessage.noScore
+      //   }
+      // };
     } else if (!TopicUtilReg.scoreNumReg.test(topic.score.value)) {
       return {
         ...topic,
