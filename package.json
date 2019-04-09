@@ -1,6 +1,6 @@
 {
   "name": "yunti_utils",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "utils",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
