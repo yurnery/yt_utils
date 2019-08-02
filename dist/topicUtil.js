@@ -333,14 +333,11 @@ var TopicUtil = /** @class */ (function () {
     };
     TopicUtil.checkScore = function (topic) {
         if (!topic.score) {
-            return topic;
-            // return {
-            //   ...topic,
-            //   error: {
-            //     errorCode: TopicErrorCode.noScore,
-            //     message: ErrorMessage.noScore
-            //   }
-            // };
+            // return topic;
+            return tslib_1.__assign({}, topic, { error: {
+                    errorCode: TopicErrorCode.noScore,
+                    message: ErrorMessage.noScore
+                } });
         }
         else if (!TopicUtilReg.scoreNumReg.test(topic.score.value)) {
             return tslib_1.__assign({}, topic, { error: {

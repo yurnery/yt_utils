@@ -455,14 +455,14 @@ export class TopicUtil {
 
   private static checkScore(topic: Topic) {
     if (!topic.score) {
-      return topic;
-      // return {
-      //   ...topic,
-      //   error: {
-      //     errorCode: TopicErrorCode.noScore,
-      //     message: ErrorMessage.noScore
-      //   }
-      // };
+      // return topic;
+      return {
+        ...topic,
+        error: {
+          errorCode: TopicErrorCode.noScore,
+          message: ErrorMessage.noScore
+        }
+      };
     } else if (!TopicUtilReg.scoreNumReg.test(topic.score.value)) {
       return {
         ...topic,
